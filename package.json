@@ -5,6 +5,7 @@
   "main": "src/server.js",
   "scripts": {
     "start": "tsnd --transpile-only --respawn --ignore node_modules src/server.ts",
+    "start:debug": "tsnd -r tsconfig-paths/register --inspect --transpile-only --respawn --ignore node_modules src/server.ts",
     "eslint-init": "./node_modules/eslint/bin/eslint.js --init",
     "build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files --no-copy-ignored",
     "prod": "node dist/server.js"
@@ -38,6 +39,7 @@
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.0",
-    "ts-node-dev": "^1.1.6"
+    "ts-node-dev": "^1.1.6",
+    "tsconfig-paths": "^3.9.0"
   }
 }

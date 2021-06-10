@@ -1,10 +1,9 @@
 import { Router } from 'express'
-import { FeedbackController } from './modules/feedbacks/feedback.controller'
+import { feedbackController } from './modules/feedbacks'
 
 const router = Router()
-const controller = new FeedbackController()
 
-router.get('/api/v1/feedbacks', controller.findFeedbacks)
-router.post('/api/v1/feedbacks', controller.createFeedback)
+router.get('/api/v1/feedbacks', (req, res) => feedbackController.findFeedbacks(req, res))
+router.post('/api/v1/feedbacks', (req, res) => feedbackController.createFeedback(req, res))
 
 export { router }
